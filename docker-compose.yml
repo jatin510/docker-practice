@@ -3,11 +3,13 @@ version: '3'
 services:
   web:
     build: .
+    restart: 'always'
     ports:
       - '8080:8080'
 
   db:
-    image: 'mongodb'
+    image: 'mongo'
+    restart: 'always'
     environment:
       MONGODB_PASSWORD: 'mongodb'
     volumes:
